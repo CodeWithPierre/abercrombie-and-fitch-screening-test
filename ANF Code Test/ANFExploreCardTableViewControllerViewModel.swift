@@ -7,10 +7,22 @@
 
 import Foundation
 
-struct ANFExploreCardTableViewControllerViewModel {
+class ANFExploreCardTableViewControllerViewModel {
     static let cellIdentifier = "exploreContentCell"
+    typealias Service = ANFExploreCardService
+    var exploreCard: [ANFExploreCard] = []
     
-    
+    func fetchProducts(completion: @escaping (Error?) -> Void) {
+        Service.shared.getANFExploreCard { [weak self] result in
+            switch result {
+            case .success(let exploreCard):
+                self?.exploreCard = exploreCard
+                completion(nil)
+            case .failure(let error):
+                completion(error)
+            }
+        }
+    }
 }
 
 
