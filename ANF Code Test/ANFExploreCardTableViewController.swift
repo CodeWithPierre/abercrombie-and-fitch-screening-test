@@ -6,6 +6,23 @@
 import UIKit
 
 class ANFExploreCardTableViewController: UITableViewController {
+    private let viewModel: ANFExploreCardTableViewControllerViewModel
+    typealias ViewModel = ANFExploreCardTableViewControllerViewModel
+    
+    init(viewModel: ANFExploreCardTableViewControllerViewModel) {
+        self.viewModel = viewModel
+        super.init()
+    }
+    
+    required init?(coder: NSCoder) {
+        self.viewModel = ANFExploreCardTableViewControllerViewModel()
+        super.init(coder: coder)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        registerReausableCell()
+    }
 
     private var exploreData: [[AnyHashable: Any]]? {
         if let filePath = Bundle.main.path(forResource: "exploreData", ofType: "json"),
@@ -16,12 +33,18 @@ class ANFExploreCardTableViewController: UITableViewController {
         return nil
     }
     
+    private  func registerReausableCell() {
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: ViewModel.cellIdentifier)
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 500
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         exploreData?.count ?? 0
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "ExploreContentCell", for: indexPath)
+        let cell = self.tableView.dequeueReusableCell(withIdentifier: "exploreContentCell", for: indexPath)
         if let titleLabel = cell.viewWithTag(1) as? UILabel,
            let titleText = exploreData?[indexPath.row]["title"] as? String {
             titleLabel.text = titleText
