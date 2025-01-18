@@ -7,6 +7,8 @@
 
 import Foundation
 
+// MARK: - ANFExploreCard Structure
+/// This struct represents the model for an explore card, used in the application.
 struct ANFExploreCard: Codable {
     var title: String?
     var backgroundImage: String?
@@ -15,7 +17,8 @@ struct ANFExploreCard: Codable {
     var topDescription: String?
     var bottomDescription: String?
     
-    // MARK: - Content
+    // MARK: - Content Structure
+    /// This struct represents individual content elements inside the explore card.
     struct Content: Codable {
         var target: String?
         var title: String?
