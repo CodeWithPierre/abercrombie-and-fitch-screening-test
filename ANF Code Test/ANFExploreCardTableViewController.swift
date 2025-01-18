@@ -22,40 +22,41 @@ class ANFExploreCardTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         registerReausableCell()
-    }
-
-    private var exploreData: [[AnyHashable: Any]]? {
-        if let filePath = Bundle.main.path(forResource: "exploreData", ofType: "json"),
-         let fileContent = try? Data(contentsOf: URL(fileURLWithPath: filePath)),
-         let jsonDictionary = try? JSONSerialization.jsonObject(with: fileContent, options: .mutableContainers) as? [[AnyHashable: Any]] {
-            return jsonDictionary
-        }
-        return nil
+        self.fetchProducts()
     }
     
     private  func registerReausableCell() {
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: ViewModel.cellIdentifier)
+        tableView.register(ANFExploreCardTableViewCell.self, forCellReuseIdentifier: "ANFExploreCardTableViewCell")
         tableView.rowHeight = UITableView.automaticDimension
-        tableView.estimatedRowHeight = 500
+    }
+    
+    
+    // Fetch products from ViewModel
+    @objc private func fetchProducts() {
+        viewModel.getExploreCard { [weak self] error in
+            if error != nil {
+                // Do something, either triger alert or log error
+            } else {
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
+            }
+        }
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        exploreData?.count ?? 0
+        viewModel.exploreCard.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.tableView.dequeueReusableCell(withIdentifier: "exploreContentCell", for: indexPath)
-        if let titleLabel = cell.viewWithTag(1) as? UILabel,
-           let titleText = exploreData?[indexPath.row]["title"] as? String {
-            titleLabel.text = titleText
-        }
-        
-        if let imageView = cell.viewWithTag(2) as? UIImageView,
-           let name = exploreData?[indexPath.row]["backgroundImage"] as? String,
-           let image = UIImage(named: name) {
-            imageView.image = image
-        }
-        
+        let cell: ANFExploreCardTableViewCell = tableView.dequeueReusableCell(withIdentifier: "ANFExploreCardTableViewCell", for: indexPath) as! ANFExploreCardTableViewCell
+        let exploreData = viewModel.exploreCard[indexPath.row]
+        cell.configure(topDescription: exploreData.topDescription ?? "",
+                       title: exploreData.title ?? "",
+                       promoMessage: exploreData.promoMessage ?? "",
+                       bottomDescription: exploreData.bottomDescription ?? "",
+                       image: exploreData.backgroundImage, shopMenButtonTitle: "Shop Men",
+                       shopWomenButtonTitle: "Shop Women")
         return cell
     }
 }

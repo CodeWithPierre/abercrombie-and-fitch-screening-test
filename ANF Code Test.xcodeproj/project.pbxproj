@@ -18,6 +18,8 @@
 		9B400F032D3ADFA8007C8112 /* ANFExploreCardTableViewControllerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B400F022D3ADFA8007C8112 /* ANFExploreCardTableViewControllerViewModel.swift */; };
 		9B400F052D3AEFF9007C8112 /* ANFExploreCardService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B400F042D3AEFF9007C8112 /* ANFExploreCardService.swift */; };
 		9B400F072D3AF36A007C8112 /* ANFExploreCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B400F062D3AF36A007C8112 /* ANFExploreCard.swift */; };
+		9B400F092D3B3A53007C8112 /* ANFExploreCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B400F082D3B3A53007C8112 /* ANFExploreCardTableViewCell.swift */; };
+		9B400F0B2D3B4122007C8112 /* ANFExploreCardImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B400F0A2D3B4122007C8112 /* ANFExploreCardImageService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +48,8 @@
 		9B400F022D3ADFA8007C8112 /* ANFExploreCardTableViewControllerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANFExploreCardTableViewControllerViewModel.swift; sourceTree = "<group>"; };
 		9B400F042D3AEFF9007C8112 /* ANFExploreCardService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANFExploreCardService.swift; sourceTree = "<group>"; };
 		9B400F062D3AF36A007C8112 /* ANFExploreCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANFExploreCard.swift; sourceTree = "<group>"; };
+		9B400F082D3B3A53007C8112 /* ANFExploreCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANFExploreCardTableViewCell.swift; sourceTree = "<group>"; };
+		9B400F0A2D3B4122007C8112 /* ANFExploreCardImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANFExploreCardImageService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,8 +92,10 @@
 			isa = PBXGroup;
 			children = (
 				3E727F02267281F7006C11AC /* ANFExploreCardTableViewController.swift */,
+				9B400F082D3B3A53007C8112 /* ANFExploreCardTableViewCell.swift */,
 				9B400F022D3ADFA8007C8112 /* ANFExploreCardTableViewControllerViewModel.swift */,
 				9B400F042D3AEFF9007C8112 /* ANFExploreCardService.swift */,
+				9B400F0A2D3B4122007C8112 /* ANFExploreCardImageService.swift */,
 				9B400F062D3AF36A007C8112 /* ANFExploreCard.swift */,
 				3E727ED226727088006C11AC /* AppDelegate.swift */,
 				3E727ED426727088006C11AC /* SceneDelegate.swift */,
@@ -214,7 +220,9 @@
 			files = (
 				9B400F052D3AEFF9007C8112 /* ANFExploreCardService.swift in Sources */,
 				9B400F072D3AF36A007C8112 /* ANFExploreCard.swift in Sources */,
+				9B400F0B2D3B4122007C8112 /* ANFExploreCardImageService.swift in Sources */,
 				9B400F032D3ADFA8007C8112 /* ANFExploreCardTableViewControllerViewModel.swift in Sources */,
+				9B400F092D3B3A53007C8112 /* ANFExploreCardTableViewCell.swift in Sources */,
 				3E727F03267281F7006C11AC /* ANFExploreCardTableViewController.swift in Sources */,
 				3E727ED326727088006C11AC /* AppDelegate.swift in Sources */,
 				3E727ED526727088006C11AC /* SceneDelegate.swift in Sources */,

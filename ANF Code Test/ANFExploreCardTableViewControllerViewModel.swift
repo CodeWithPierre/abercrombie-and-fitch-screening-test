@@ -12,7 +12,7 @@ class ANFExploreCardTableViewControllerViewModel {
     typealias Service = ANFExploreCardService
     var exploreCard: [ANFExploreCard] = []
     
-    func fetchProducts(completion: @escaping (Error?) -> Void) {
+    func getExploreCard(completion: @escaping (Error?) -> Void) {
         Service.shared.getANFExploreCard { [weak self] result in
             switch result {
             case .success(let exploreCard):
@@ -24,5 +24,3 @@ class ANFExploreCardTableViewControllerViewModel {
         }
     }
 }
-
-
