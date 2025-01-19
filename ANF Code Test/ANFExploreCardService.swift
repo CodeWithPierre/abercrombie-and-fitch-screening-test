@@ -12,14 +12,15 @@ enum ANFExploreCardError: Error {
     case invalidURLString
     case responseDataError
     case decodingError
-    case serviceError(Error)
+    case serviceError
 }
 
 import Foundation
 
 // MARK: - ANFExploreCardService Class
 /// This class is responsible for fetching the explore card data from a remote service.
-class ANFExploreCardService {
+class ANFExploreCardService: ANFExploreCardServiceProtocol {
+
     static let shared = ANFExploreCardService()
     
     // MARK: - Private Properties
@@ -38,7 +39,7 @@ class ANFExploreCardService {
         
         URLSession.shared.dataTask(with: url) { data, _, error in
             if let error = error {
-                completion(.failure(.serviceError(error)))
+                completion(.failure(.serviceError))
                 return
             }
             
