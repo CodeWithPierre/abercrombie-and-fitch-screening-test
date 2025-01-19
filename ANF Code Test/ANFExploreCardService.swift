@@ -6,6 +6,11 @@
 //
 
 import Foundation
+
+protocol URLSessionProtocol {
+    func dataTask(with url: URL, completionHandler: @escaping @Sendable(Data?, URLResponse?, Error?) -> Void) -> URLSessionDataTask
+}
+
 // MARK: - ANFExploreCardError Enum
 /// This enum defines different types of errors that can occur when working with an `ANFExploreCard`.
 enum ANFExploreCardError: Error {
@@ -15,16 +20,21 @@ enum ANFExploreCardError: Error {
     case serviceError
 }
 
-import Foundation
-
 // MARK: - ANFExploreCardService Class
 /// This class is responsible for fetching the explore card data from a remote service.
 class ANFExploreCardService: ANFExploreCardServiceProtocol {
-
+    
     static let shared = ANFExploreCardService()
     
     // MARK: - Private Properties
-    private let urlString = "https://www.abercrombie.com/anf/nativeapp/qa/codetest/codeTest_exploreData.css"
+    private var urlString: String
+    private var session: URLSessionProtocol
+    
+    init(urlString: String = "https://www.abercrombie.com/anf/nativeapp/qa/codetest/codeTest_exploreData.css",
+         session: URLSessionProtocol = URLSession.shared) {
+        self.urlString = urlString
+        self.session = session
+    }
     
     // MARK: - Public Methods
     
@@ -38,7 +48,7 @@ class ANFExploreCardService: ANFExploreCardServiceProtocol {
         }
         
         URLSession.shared.dataTask(with: url) { data, _, error in
-            if let error = error {
+            if error != nil {
                 completion(.failure(.serviceError))
                 return
             }
@@ -57,3 +67,5 @@ class ANFExploreCardService: ANFExploreCardServiceProtocol {
         }.resume()
     }
 }
+
+extension URLSession: URLSessionProtocol, Sendable {}

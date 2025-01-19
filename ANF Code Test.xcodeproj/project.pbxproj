@@ -21,6 +21,7 @@
 		9B400F092D3B3A53007C8112 /* ANFExploreCardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B400F082D3B3A53007C8112 /* ANFExploreCardTableViewCell.swift */; };
 		9B400F0B2D3B4122007C8112 /* ANFExploreCardImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B400F0A2D3B4122007C8112 /* ANFExploreCardImageService.swift */; };
 		9BCAD12C2D3CA26900802FE2 /* ANFExploreCardTableViewControllerViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCAD12B2D3CA26900802FE2 /* ANFExploreCardTableViewControllerViewModelTest.swift */; };
+		9BCAD12E2D3CB0B700802FE2 /* ANFExploreCardServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BCAD12D2D3CB0B700802FE2 /* ANFExploreCardServiceTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		9B400F082D3B3A53007C8112 /* ANFExploreCardTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANFExploreCardTableViewCell.swift; sourceTree = "<group>"; };
 		9B400F0A2D3B4122007C8112 /* ANFExploreCardImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANFExploreCardImageService.swift; sourceTree = "<group>"; };
 		9BCAD12B2D3CA26900802FE2 /* ANFExploreCardTableViewControllerViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANFExploreCardTableViewControllerViewModelTest.swift; sourceTree = "<group>"; };
+		9BCAD12D2D3CB0B700802FE2 /* ANFExploreCardServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ANFExploreCardServiceTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 			children = (
 				3E727EE92672708B006C11AC /* ANFExploreCardTableViewControllerTests.swift */,
 				9BCAD12B2D3CA26900802FE2 /* ANFExploreCardTableViewControllerViewModelTest.swift */,
+				9BCAD12D2D3CB0B700802FE2 /* ANFExploreCardServiceTest.swift */,
 				3E727EEB2672708B006C11AC /* Info.plist */,
 			);
 			path = "ANF Code TestTests";
@@ -237,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BCAD12C2D3CA26900802FE2 /* ANFExploreCardTableViewControllerViewModelTest.swift in Sources */,
+				9BCAD12E2D3CB0B700802FE2 /* ANFExploreCardServiceTest.swift in Sources */,
 				3E727EEA2672708B006C11AC /* ANFExploreCardTableViewControllerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
