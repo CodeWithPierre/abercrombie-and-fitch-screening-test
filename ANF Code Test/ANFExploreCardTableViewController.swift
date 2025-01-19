@@ -6,7 +6,7 @@
 import UIKit
 
 class ANFExploreCardTableViewController: UITableViewController {
-    private let viewModel: ANFExploreCardTableViewControllerViewModel
+    let viewModel: ANFExploreCardTableViewControllerViewModel
     typealias ViewModel = ANFExploreCardTableViewControllerViewModel
     
     init(viewModel: ANFExploreCardTableViewControllerViewModel) {

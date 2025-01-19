@@ -23,7 +23,7 @@ class ANFExploreCardTableViewCell: UITableViewCell {
     // MARK: - UI Elements
     
     // Background image view
-    private let backgroundImageView: UIImageView = {
+    private(set) lazy var backgroundImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.contentMode = .scaleAspectFill
@@ -32,7 +32,7 @@ class ANFExploreCardTableViewCell: UITableViewCell {
     }()
     
     // Labels for various texts on the card
-    private let topDescriptionLabel: UILabel = {
+    private(set) lazy var topDescriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 13)
@@ -41,7 +41,7 @@ class ANFExploreCardTableViewCell: UITableViewCell {
         return label
     }()
     
-    private let titleLabel: UILabel = {
+    private(set) lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.boldSystemFont(ofSize: 17)
@@ -50,7 +50,7 @@ class ANFExploreCardTableViewCell: UITableViewCell {
         return label
     }()
     
-    private let promoMessageLabel: UILabel = {
+    private(set) lazy var promoMessageLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.font = UIFont.systemFont(ofSize: 11)
@@ -59,7 +59,7 @@ class ANFExploreCardTableViewCell: UITableViewCell {
         return label
     }()
     
-    private lazy var bottomDescriptionTextView: UITextView = {
+    private(set) lazy var bottomDescriptionTextView: UITextView = {
         let bottomView = UITextView()
         bottomView.translatesAutoresizingMaskIntoConstraints = false
         bottomView.isEditable = false
@@ -71,7 +71,7 @@ class ANFExploreCardTableViewCell: UITableViewCell {
     }()
     
     // Stack view for buttons
-    private let buttonStackView: UIStackView = {
+    private(set) lazy var buttonStackView: UIStackView = {
         let stackView = UIStackView()
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
@@ -81,7 +81,7 @@ class ANFExploreCardTableViewCell: UITableViewCell {
     }()
     
     // Shop buttons
-    private let shopMenButton: UIButton = {
+    private(set) lazy var shopMenButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
@@ -91,7 +91,7 @@ class ANFExploreCardTableViewCell: UITableViewCell {
         return button
     }()
     
-    private let shopWomenButton: UIButton = {
+    private(set) lazy var shopWomenButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.titleLabel?.font = UIFont.systemFont(ofSize: 15)
